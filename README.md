@@ -1,11 +1,7 @@
-# big-lizard
+# SAS Sample Code
 
-This is a repository where I make public some of my solutions in different programming languages.
+Some SAS code I have written
 
-## Languages:
+# Contents:
 
-  (a) R  
-  (b) Julia  
-  (c) Python
-  
-It is a work in progress...  
+It is a work in progress..
