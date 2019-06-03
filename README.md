@@ -10,4 +10,7 @@ List filenames in a folder into a data set. Works in SAS studio for those withou
 ## varupbound.sas
 Computes the upper bound of a confidence interval of the estimated variance. Designed for one way ANOVA problems.
 
+## Sample SAS code with PROC SQL and Macro code
+Recursive elimination of variables from a regression model with high Variance Inflation Factors to eliminate multi-collinearity
+
 It is a work in progress..
