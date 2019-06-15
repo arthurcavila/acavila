@@ -12,24 +12,20 @@ run;
 
 /* Using Data step to assign numeric variables and character  */
 /* variables as lists into in macrovariables */
+%let varlistn= ;
+%let varlistc= ;
 data _null_;
-	set variables nobs=nobs;
-	length varlistchar varlistnum $ 256;
-	retain varlistchar varlistnum;
-	if variable not in ('Name','Salary','logSalary') then do;
-		if (type='Char') then
-		    varlistchar = catx(' ',varlistchar,variable);
-		else 
-			varlistnum = catx(' ',varlistnum,variable);
-	end;
-	if _N_=nobs then do;
-		call symput('varlistn',trim(varlistnum));
-		call symput('varlistc',trim(varlistchar));
-	end;
+  set variables;
+  if variable not in ('Name','Salary','logSalary') then do;
+    if (type='Char') then
+      call symputx('varlistc',catx(' ',symget('varlistc'), variable));
+    else 
+      call symputx('varlistn',catx(' ',symget('varlistn'), variable));
+  end;
 run;
 
-%put "varlistc = &varlistc";
-%put "varlistn = &varlistn";
+%put &=varlistc;
+%put &=varlistn;
 
 proc freq data=sashelp.baseball;
 	table &varlistc;
