@@ -13,4 +13,7 @@ Computes the upper bound of a confidence interval of the estimated variance. Des
 ## Sample SAS code with PROC SQL and Macro code
 Recursive elimination of variables from a regression model with high Variance Inflation Factors to eliminate multi-collinearity
 
+## srqq.sas
+Macro to plot Studentized Residuals on a QQ Plot with 95% confidence bands. Visual aid to identify the Normality assumption.
+
 It is a work in progress..
